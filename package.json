@@ -1,0 +1,25 @@
+{
+  "name": "cnab240",
+  "version": "1.0.0",
+  "description": "Pacote para validação e montagem de arquivos de remessa no padrão Febraban CNAB 240.",
+  "main": "cnab240.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagoiaia/cnab240.git"
+  },
+  "keywords": [
+    "febraban",
+    "cnab",
+    "cnab240",
+    "remessa"
+  ],
+  "author": "Thiago Iaia",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/thiagoiaia/cnab240/issues"
+  },
+  "homepage": "https://github.com/thiagoiaia/cnab240#readme"
+}
