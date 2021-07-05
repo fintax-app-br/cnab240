@@ -26,7 +26,7 @@ export const SicrediHeaderLote = {
     informacao2:                        '                                        ',
     controleDaCobranca: {
         numeroRemessaRetorno:           null,
-        dataGeracaoRemessaRetorno:      '        ',
+        dataGeracaoRemessaRetorno:      null,
     },
     dataCredito:                        '00000000',
     usoExclusivoCnabFebraban3:          '                                 '
