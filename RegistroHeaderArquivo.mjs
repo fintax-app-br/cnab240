@@ -1,5 +1,5 @@
 export class RegistroHeaderArquivo {
-    
+
     #Controle = null
     #Cnab1 = null
     #Empresa = null
@@ -9,46 +9,72 @@ export class RegistroHeaderArquivo {
     #ReservadoBanco = null
     #ReservadoEmpresa = null
     #Cnab3 = null
-    
+
     #Registro = null
 
     constructor(templateHeaderArquivo) {
-        this.#Controle          = new Controle( templateHeaderArquivo.controle.codigoDoBancoNaCompensacao,
-                                                templateHeaderArquivo.controle.loteDeServico, 
-                                                templateHeaderArquivo.controle.tipoDeRegistro).Conteudo
-        
-        this.#Cnab1             = new Cnab( templateHeaderArquivo.usoExclusivoCnabFebraban1).Conteudo
-        
-        this.#Empresa           = new Empresa(  templateHeaderArquivo.empresa.tipoInscricaoEmpresa, 
-                                                templateHeaderArquivo.empresa.numeroInscricaoEmpresa, 
-                                                templateHeaderArquivo.empresa.codigoConvenioBanco, 
-                                                templateHeaderArquivo.empresa.agenciaMantenedoraConta, 
-                                                templateHeaderArquivo.empresa.digitoVerificadorAgencia, 
-                                                templateHeaderArquivo.empresa.numeroContaCorrente, 
-                                                templateHeaderArquivo.empresa.digitoVerificadorConta, 
-                                                templateHeaderArquivo.empresa.digitoVerificadorAgenciaConta, 
-                                                templateHeaderArquivo.empresa.nomeEmpresa).Conteudo
-        
-        this.#Banco             = new Banco(    templateHeaderArquivo.nomeBanco).Conteudo
-        
-        this.#Cnab2             = new Cnab(     templateHeaderArquivo.usoExclusivoCnabFebraban2).Conteudo
-        
-        this.#Arquivo           = new Arquivo(  templateHeaderArquivo.arquivo.codigoRemessaRetorno, 
-                                                templateHeaderArquivo.arquivo.dataGeracaoArquivo, 
-                                                templateHeaderArquivo.arquivo.horarioGeracaoArquivo, 
-                                                templateHeaderArquivo.arquivo.numeroSequencialArquivo, 
-                                                templateHeaderArquivo.arquivo.numeroVersaoLayoutArquivo, 
-                                                templateHeaderArquivo.arquivo.densidadeGravacaoArquivo).Conteudo
-        
-        this.#ReservadoBanco    = new Reservado(    templateHeaderArquivo.usoReservadoBanco).Conteudo
-        
-        this.#ReservadoEmpresa  = new Reservado(    templateHeaderArquivo.usoReservadoEmpresa).Conteudo
-        
-        this.#Cnab3             = new Cnab( templateHeaderArquivo.usoExclusivoCnabFebraban3).Conteudo
-        
+        this.#Controle = new Controle(templateHeaderArquivo.controle.codigoDoBancoNaCompensacao,
+            templateHeaderArquivo.controle.loteDeServico,
+            templateHeaderArquivo.controle.tipoDeRegistro).Conteudo
+
+        this.#Cnab1 = new Cnab(templateHeaderArquivo.usoExclusivoCnabFebraban1).Conteudo
+
+        this.#Empresa = new Empresa(templateHeaderArquivo.empresa.tipoInscricaoEmpresa,
+            templateHeaderArquivo.empresa.numeroInscricaoEmpresa,
+            templateHeaderArquivo.empresa.codigoConvenioBanco,
+            templateHeaderArquivo.empresa.agenciaMantenedoraConta,
+            templateHeaderArquivo.empresa.digitoVerificadorAgencia,
+            templateHeaderArquivo.empresa.numeroContaCorrente,
+            templateHeaderArquivo.empresa.digitoVerificadorConta,
+            templateHeaderArquivo.empresa.digitoVerificadorAgenciaConta,
+            templateHeaderArquivo.empresa.nomeEmpresa).Conteudo
+
+        this.#Banco = new Banco(templateHeaderArquivo.nomeBanco).Conteudo
+
+        this.#Cnab2 = new Cnab(templateHeaderArquivo.usoExclusivoCnabFebraban2).Conteudo
+
+        this.#Arquivo = new Arquivo(templateHeaderArquivo.arquivo.codigoRemessaRetorno,
+            templateHeaderArquivo.arquivo.dataGeracaoArquivo,
+            templateHeaderArquivo.arquivo.horarioGeracaoArquivo,
+            templateHeaderArquivo.arquivo.numeroSequencialArquivo,
+            templateHeaderArquivo.arquivo.numeroVersaoLayoutArquivo,
+            templateHeaderArquivo.arquivo.densidadeGravacaoArquivo).Conteudo
+
+        this.#ReservadoBanco = new Reservado(templateHeaderArquivo.usoReservadoBanco).Conteudo
+
+        this.#ReservadoEmpresa = new Reservado(templateHeaderArquivo.usoReservadoEmpresa).Conteudo
+
+        this.#Cnab3 = new Cnab(templateHeaderArquivo.usoExclusivoCnabFebraban3).Conteudo
+
         this.#Registro = this.#Controle + this.#Cnab1 + this.#Empresa + this.#Banco + this.#Cnab2 + this.#Arquivo + this.#ReservadoBanco + this.#ReservadoEmpresa + this.#Cnab3
     }
-
+    get Controle() {
+        return this.#Controle
+    }
+    get Cnab1() {
+        return this.#Controle
+    }
+    get Empresa() {
+        return this.#Empresa
+    }
+    get NomeBanco() {
+        return this.#Banco
+    }
+    get Cnab2() {
+        return this.#Cnab2
+    }
+    get Arquivo() {
+        return this.#Arquivo
+    }
+    get ReservadoBanco() {
+        return this.#ReservadoBanco
+    }
+    get ReservadoEmpresa() {
+        return this.#ReservadoEmpresa
+    }
+    get Cnab3() {
+        return this.#Cnab3
+    }
     get RegistroHeaderArquivo() {
         return this.#Registro
     }
