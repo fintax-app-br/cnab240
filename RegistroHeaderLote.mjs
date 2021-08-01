@@ -2,13 +2,13 @@ export class RegistroHeaderLote{
 
     #Controle = null
     #Servico = null
-    #Cnab1 = null
+    #Cnab2 = null
     #Empresa = null
     #Informacao1 = null
     #Informacao2 = null
     #ControleCobranca = null
     #DataCredito = null
-    #Cnab2 = null
+    #Cnab3 = null
 
     #Registro = null
 
@@ -22,7 +22,7 @@ export class RegistroHeaderLote{
                                                 templateHeaderLote.servico.usoExclusivoCnabFebraban1, 
                                                 templateHeaderLote.servico.numeroVersaoLayoutDoLote).Conteudo
 
-        this.#Cnab1             = new Cnab(     templateHeaderLote.usoExclusivoCnabFebraban2).Conteudo
+        this.#Cnab2             = new Cnab(     templateHeaderLote.usoExclusivoCnabFebraban2).Conteudo
 
         this.#Empresa           = new Empresa(  templateHeaderLote.empresa.tipoInscricaoEmpresa, 
                                                 templateHeaderLote.empresa.numeroInscricaoEmpresa, 
@@ -43,11 +43,37 @@ export class RegistroHeaderLote{
         
         this.#DataCredito       = new DataCredito(  templateHeaderLote.dataCredito).Conteudo
         
-        this.#Cnab2             = new Cnab( templateHeaderLote.usoExclusivoCnabFebraban3).Conteudo
+        this.#Cnab3             = new Cnab( templateHeaderLote.usoExclusivoCnabFebraban3).Conteudo
 
-        this.#Registro = this.#Controle + this.#Servico + this.#Cnab1 + this.#Empresa + this.#Informacao1 + this.#Informacao2 + this.#ControleCobranca + this.#ControleCobranca + this.#DataCredito + this.#Cnab2
+        this.#Registro = this.#Controle + this.#Servico + this.#Cnab2 + this.#Empresa + this.#Informacao1 + this.#Informacao2 + this.#ControleCobranca + this.#ControleCobranca + this.#DataCredito + this.#Cnab3
     }
-
+    get Controle() {
+        return this.#Controle
+    }
+    get Servico() {
+        return this.#Servico
+    }
+    get Cnab2() {
+        return this.#Cnab2
+    }
+    get Empresa() {
+        return this.#Empresa
+    }
+    get Informacao1() {
+        return this.#Informacao1
+    }
+    get Informacao2() {
+        return this.#Informacao2
+    }
+    get ControleCobranca() {
+        return this.#ControleCobranca
+    }
+    get DataCredito() {
+        return this.#DataCredito
+    }
+    get Cnab3() {
+        return this.#Cnab3
+    }
     get RegistroHeaderLote() {
         return this.#Registro
     }
