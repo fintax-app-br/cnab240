@@ -48,7 +48,7 @@ export class RegistroSegmentoQ {
         return this.#SacadorAvalista
     }
     get Correspondente() {
-        return this.#BancoCorrespondente
+        return this.#Correspondente
     }
     get Cnab2() {
         return this.#Cnab2

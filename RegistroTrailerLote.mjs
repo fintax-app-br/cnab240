@@ -1,12 +1,12 @@
 export class RegistroTrailerLote {
     #Controle = null
     #Cnab1 = null
-    #Quantidade = null
+    #QuantidadeRegistros = null
     #CobrancaSimples = null
     #CobrancaVinculada = null
     #CobrancaCaucionada = null
     #CobrancaDescontada = null
-    #Aviso = null
+    #NumeroAviso = null
     #Cnab2 = null
 
     constructor(templateTrailerLote) {
@@ -16,7 +16,7 @@ export class RegistroTrailerLote {
 
         this.#Cnab1                  = new Cnab(    templateTrailerLote.usoExclusivoCnabFebraban1).Conteudo
 
-        this.#Quantidade             = new Quantidade(  templateTrailerLote.quantidadeDeRegistrosNoLote).Conteudo
+        this.#QuantidadeRegistros    = new QuantidadeRegistros(  templateTrailerLote.quantidadeDeRegistrosNoLote).Conteudo
 
         this.#CobrancaSimples        = new CobrancaSimples( templateTrailerLote.cobrancaSimples.quantidade, 
                                                             templateTrailerLote.cobrancaSimples.valor).Conteudo
@@ -30,7 +30,7 @@ export class RegistroTrailerLote {
         this.#CobrancaDescontada     = new CobrancaDescontada(  templateTrailerLote.cobrancaDescontada.quantidade, 
                                                                 templateTrailerLote.cobrancaDescontada.valor).Conteudo
 
-        this.#Aviso                  = new Aviso(   templateTrailerLote.numeroAvisoLancamento).Conteudo
+        this.#NumeroAviso            = new NumeroAviso(   templateTrailerLote.numeroAvisoLancamento).Conteudo
 
         this.#Cnab2                  = new Cnab(    templateTrailerLote.usoExclusivoCnabFebraban2).Conteudo
     }
@@ -41,7 +41,7 @@ export class RegistroTrailerLote {
         return this.#Cnab1
     }
     get Quantidade() {
-        return this.#Quantidade
+        return this.#QuantidadeRegistros
     }
     get CobrancaSimples() {
         return this.#CobrancaSimples
@@ -55,14 +55,14 @@ export class RegistroTrailerLote {
     get CobrancaDescontada() {
         return this.#CobrancaDescontada
     }
-    get Aviso() {
-        return this.#Aviso
+    get NumeroAviso() {
+        return this.#NumeroAviso
     }
     get Cnab2() {
         return this.#Cnab2
     }
     get RegistroTrailerLote() {
-        return this.#Controle + this.#Cnab1 + this.#Quantidade + this.#CobrancaSimples + this.#CobrancaVinculada + this.#CobrancaCaucionada + this.#CobrancaDescontada + this.#Aviso + this.#Cnab2
+        return this.#Controle + this.#Cnab1 + this.#QuantidadeRegistros + this.#CobrancaSimples + this.#CobrancaVinculada + this.#CobrancaCaucionada + this.#CobrancaDescontada + this.#NumeroAviso + this.#Cnab2
     }
 }
 class Controle {
