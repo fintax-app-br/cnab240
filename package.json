@@ -1,7 +1,7 @@
 {
   "name": "cnab240",
   "version": "2.0.0",
-  "description": "Pacote para validação e montagem de arquivos de remessa no padrão Febraban CNAB 240.",
+  "description": "Pacote base para validação, geração, armazenamento e controle arquivos de remessa no padrão Febraban CNAB 240.",
   "main": "cnab240.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
