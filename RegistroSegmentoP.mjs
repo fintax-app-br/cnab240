@@ -1,20 +1,20 @@
 export class RegistroSegmentoP {
     #Controle = null
     #Servico = null
-    #Cc = null
+    #ContaCorrente = null
     #NossoNumero = null
-    #Caracteristica = null
+    #CaracteristicaCobranca = null
     #Titulo = null
     #Juros = null
     #Desconto = null
     #Iof = null
     #Abatimento = null
-    #Beneficiario = null
+    #UsoEmpresaBeneficiario = null
     #Protesto = null
     #BaixaDevolucao = null
-    #Moeda = null
-    #Contrato = null
-    #UsoLivre = null
+    #CodigoMoeda = null
+    #NumeroContrato = null
+    #UsoLivreBancoEmpresa = null
 
     constructor(templateSegmentoP) {
             this.#Controle = new Controle(  templateSegmentoP.controle.codigoDoBancoNaCompensacao, 
@@ -26,15 +26,15 @@ export class RegistroSegmentoP {
                                             templateSegmentoP.servico.usoExclusivoCnabFebraban1,
                                             templateSegmentoP.servico.codigoDeMovimentoRemessa).Conteudo
 
-            this.#Cc = new ContaCorrente(   templateSegmentoP.contaCorrente.agenciaMantenedoraConta, 
-                                            templateSegmentoP.contaCorrente.digitoVerificadorAgencia, 
-                                            templateSegmentoP.contaCorrente.numeroContaCorrente, 
-                                            templateSegmentoP.contaCorrente.digitoVerificadorConta, 
-                                            templateSegmentoP.contaCorrente.digitoVerificadorAgenciaConta).Conteudo
+            this.#ContaCorrente = new ContaCorrente(   templateSegmentoP.contaCorrente.agenciaMantenedoraConta, 
+                                                        templateSegmentoP.contaCorrente.digitoVerificadorAgencia, 
+                                                        templateSegmentoP.contaCorrente.numeroContaCorrente, 
+                                                        templateSegmentoP.contaCorrente.digitoVerificadorConta, 
+                                                        templateSegmentoP.contaCorrente.digitoVerificadorAgenciaConta).Conteudo
 
             this.#NossoNumero = new NossoNumero(templateSegmentoP.nossoNumero).Conteudo
 
-            this.#Caracteristica = new CaracteristicaCobranca(  templateSegmentoP.caracteristicaCobranca.codigoDaCarteira,
+            this.#CaracteristicaCobranca = new CaracteristicaCobranca(  templateSegmentoP.caracteristicaCobranca.codigoDaCarteira,
                                                                 templateSegmentoP.caracteristicaCobranca.formaDeCadastramentoDoTituloNoBanco,
                                                                 templateSegmentoP.caracteristicaCobranca.tipoDeDocumento,
                                                                 templateSegmentoP.caracteristicaCobranca.identificacaoDaEmissaoDoBoletoDePagamento,
@@ -61,21 +61,69 @@ export class RegistroSegmentoP {
 
             this.#Abatimento = new Abatimento(  templateSegmentoP.valorDoAbatimento).Conteudo
 
-            this.#Beneficiario = new Beneficiario(  templateSegmentoP.identificacaoDoTituloNaEmpresa).Conteudo
+            this.#UsoEmpresaBeneficiario = new UsoEmpresaBeneficiario(  templateSegmentoP.identificacaoDoTituloNaEmpresa).Conteudo
 
             this.#Protesto = new Protesto(  templateSegmentoP.protesto.codigoParaProtesto,
                                             templateSegmentoP.protesto.numeroDeDiasParaProtesto).Conteudo
 
             this.#BaixaDevolucao = new PrazoBaixaDevolucao( templateSegmentoP.prazo.codigoParaBaixaDevolucao, templateSegmentoP.prazo.numeroDeDiasParaBaixaDevolucao).Conteudo
 
-            this.#Moeda = new Moeda(    templateSegmentoP.codigoDaMoeda).Conteudo
+            this.#CodigoMoeda = new CodigoMoeda(    templateSegmentoP.codigoDaMoeda).Conteudo
 
-            this.#Contrato = new Contrato(  templateSegmentoP.numeroDoContratoDaOperacaoDeCredito).Conteudo
+            this.#NumeroContrato = new NumeroContrato(  templateSegmentoP.numeroDoContratoDaOperacaoDeCredito).Conteudo
 
-            this.#UsoLivre = new UsoLivreBancoEmpresa(  templateSegmentoP.usoLivreBancoEmpresaOuAutorizacaoPagamentoParcial).Conteudo
+            this.#UsoLivreBancoEmpresa = new UsoLivreBancoEmpresa(  templateSegmentoP.usoLivreBancoEmpresaOuAutorizacaoPagamentoParcial).Conteudo
+    }
+    get Controle() {
+        return this.#Controle
+    }
+    get Servico() {
+        return this.#Servico
+    }
+    get ContaCorrente() {
+        return this.#ContaCorrente
+    }
+    get NossoNumero() {
+        return this.#NossoNumero
+    }
+    get CaracteristicaCobranca() {
+        return this.#CaracteristicaCobranca
+    }
+    get Titulo() {
+        return this.#Titulo
+    }
+    get Juros() {
+        return this.#Juros
+    }
+    get Desconto() {
+        return this.#Desconto
+    }
+    get Iof() {
+        return this.#Iof
+    }
+    get Abatimento() {
+        return this.#Abatimento
+    }
+    get UsoEmpresaBeneficiario() {
+        return this.#UsoEmpresaBeneficiario
+    }
+    get Protesto() {
+        return this.#Protesto
+    }
+    get BaixaDevolucao() {
+        return this.#BaixaDevolucao
+    }
+    get CodigoMoeda() {
+        return this.#CodigoMoeda
+    }
+    get NumeroContrato() {
+        return this.#NumeroContrato
+    }
+    get UsoLivreBancoEmpresa() {
+        return this.#UsoLivreBancoEmpresa
     }
     get RegistroSegmentoP() {
-        return this.#Controle + this.#Servico + this.#Cc + this.#NossoNumero + this.#Caracteristica + this.#Titulo + this.#Juros + this.#Desconto + this.#Iof + this.#Abatimento + this.#Beneficiario + this.#Protesto + this.#BaixaDevolucao + this.#Moeda + this.#Contrato + this.#UsoLivre
+        return this.#Controle + this.#Servico + this.#ContaCorrente + this.#NossoNumero + this.#CaracteristicaCobranca + this.#Titulo + this.#Juros + this.#Desconto + this.#Iof + this.#Abatimento + this.#UsoEmpresaBeneficiario + this.#Protesto + this.#BaixaDevolucao + this.#CodigoMoeda + this.#NumeroContrato + this.#UsoLivreBancoEmpresa
     }
 }
 class Controle {
@@ -189,7 +237,7 @@ class Abatimento {
         return this.#Conteudo
     }
 }
-class Beneficiario {
+class UsoEmpresaBeneficiario {
     #Conteudo = null
     constructor(identificacao) {
         if (identificacao.length === 25) {
@@ -222,7 +270,7 @@ class PrazoBaixaDevolucao {
         return this.#Conteudo
     }
 }
-class Moeda {
+class CodigoMoeda {
     #Conteudo = null
     constructor(codigo) {
         if (codigo.length === 2) {
@@ -233,7 +281,7 @@ class Moeda {
         return this.#Conteudo
     }
 }
-class Contrato {
+class NumeroContrato {
     #Conteudo = null
     constructor(numero) {
         if (numero.length === 10) {
