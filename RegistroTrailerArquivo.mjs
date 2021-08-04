@@ -4,7 +4,6 @@ export class RegistroTrailerArquivo {
     #Cnab1 = null
     #Totais = null
     #Cnab2 = null
-    #Registro = null
     
     constructor(templateTrailerArquivo) {
         this.#Controle  = new Controle( templateTrailerArquivo.controle.codigoDoBancoNaCompensacao, 
@@ -18,12 +17,21 @@ export class RegistroTrailerArquivo {
                                         templateTrailerArquivo.totais.quantidadeDeContasLotes).Conteudo
 
         this.#Cnab2     = new Cnab( templateTrailerArquivo.usoExclusivoCnabFebraban2).Conteudo
-
-        this.#Registro = this.#Controle + this.#Cnab1 + this.#Totais + this.#Cnab2
     }
-
+    get Controle() {
+        return this.#Controle
+    }
+    get Cnab1() {
+        return this.#Cnab1
+    }
+    get Totais() {
+        return this.#Totais
+    }
+    get Cnab2() {
+        return this.#Cnab2
+    }
     get RegistroTrailerArquivo() {
-        return this.#Registro
+        return this.#Controle + this.#Cnab1 + this.#Totais + this.#Cnab2
     }
 }
 class Controle {
